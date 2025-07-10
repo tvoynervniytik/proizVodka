@@ -1,0 +1,118 @@
+﻿<Page x:Class="mop.Pages.MenuFirstPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:mop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1450"
+      Title="MenuFirstPage">
+
+    <Grid Background="White">
+
+        <Button Content="← назад"
+                    FontSize="34"
+                    FontWeight="Bold"
+                    Width="200"
+                Height="100" Style="{StaticResource back}"
+               
+                    BorderThickness="0" 
+                    x:Name="BackBtn" Click="BackBtn_Click" Margin="65,10,1015,602">
+           
+        </Button>
+
+        <StackPanel HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+            <TextBlock Text="меню" 
+                       FontSize="70" 
+                       Margin="0 0 0 15"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#C0D5B3" Offset="0"/>
+                        <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                        <GradientStop Color="#A3AEE6" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+            <Border CornerRadius="26"
+                 
+                    Margin="0 10" x:Name="ordBr">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#C0D5B3" Offset="0"/>
+                        <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                        <GradientStop Color="#A3AEE6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Content="оформление"
+                        FontSize="40" 
+                        FontWeight="Bold"
+                        Height="60"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0" 
+                        x:Name="OrderBtn" Click="OrderBtn_Click"/>
+            </Border>
+
+            <Border CornerRadius="26"
+                    Margin="0 10"
+                    x:Name="infBr">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#C0D5B3" Offset="0"/>
+                        <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                        <GradientStop Color="#A3AEE6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Content="информация"
+                        FontSize="40"
+                        FontWeight="Bold"
+                        Height="60"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0" 
+                        x:Name="InfBtn" Click="InfBtn_Click"/>
+            </Border>
+
+            <Border CornerRadius="26"
+                    Margin="0 10" x:Name="ScheduleBr">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#C0D5B3" Offset="0"/>
+                        <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                        <GradientStop Color="#A3AEE6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Content="расписание"
+                        FontSize="40"
+                        FontWeight="Bold"
+                        Height="60"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0" 
+                        x:Name="ScheduleBtn" Click="ScheduleBtn_Click"/>
+            </Border>
+
+        </StackPanel>
+
+        <Image Source="/Images/Vector.png"
+                   Width="800"
+                       Margin="889,0,-239,306"/>
+        <Image Source="/Images/Vector.png"
+                   Width="800"
+                       Margin="-240,313,890,-7" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+    </Grid>
+</Page>

@@ -1,0 +1,322 @@
+﻿<Page x:Class="mop.Pages.addingPages.AddOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:mop.Pages.addingPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1450"
+      Title="AddOrderPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="← назад"
+                FontSize="34" Style="{StaticResource back}"
+                FontWeight="Bold"
+                Width="200" Height="100"
+                BorderThickness="0" 
+                x:Name="BackBtn" 
+                Click="BackBtn_Click">
+        </Button>
+        <Image Source="/Images/Vector.png"
+           Grid.Column="2" 
+           Grid.RowSpan="4" 
+           VerticalAlignment="Top"
+           HorizontalAlignment="Right"/>
+        <Image Source="/Images/Vector.png"
+           VerticalAlignment="Bottom"
+           HorizontalAlignment="Left"
+           RenderTransformOrigin="0.5,0.5" 
+           Grid.RowSpan="4" Grid.Row="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180.071"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock Text="оформить заказ"
+               FontSize="55" 
+               FontWeight="Bold"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Column="0" Grid.RowSpan="2"
+               Grid.ColumnSpan="3">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <TextBlock Text="клиент" 
+                    FontSize="35"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Grid.RowSpan="2" Grid.ColumnSpan="2" 
+                    Grid.Row="1">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <ComboBox Grid.RowSpan="2" Grid.ColumnSpan="2" 
+              Grid.Row="1" Grid.Column="1"
+              x:Name="clientsCb" FontSize="30"
+              Width="350" Height="60" FontWeight="Bold"
+              ItemsSource="{Binding clients}">
+            <ComboBox.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name}"/>
+                    <TextBlock Text=" "/>
+               
+                    <TextBlock Text="{Binding Surname}"/>
+                    <TextBlock Text=" "/>
+               
+                    <TextBlock Text="{Binding Patronymic}"/>
+               
+                        
+                    </StackPanel> </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Text="бригада" 
+                    FontSize="35"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Grid.RowSpan="1" Grid.ColumnSpan="2" 
+                    Grid.Row="2">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <ComboBox Grid.RowSpan="1" Grid.ColumnSpan="2" 
+                  Grid.Row="2" Grid.Column="1"
+                  x:Name="brigadesCb" FontSize="30"
+                  Width="350" Height="60" FontWeight="Bold"
+                  ItemsSource="{Binding brigades}">
+            <ComboBox.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ID}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Text="услуга" 
+                    FontSize="35"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Grid.RowSpan="2" Grid.ColumnSpan="2" 
+                    Grid.Row="2">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <ComboBox Grid.RowSpan="2" Grid.ColumnSpan="2" 
+              Grid.Row="2" Grid.Column="1"
+              x:Name="servicesCb" FontSize="30"
+              Width="350" Height="60" FontWeight="Bold"
+              ItemsSource="{Binding services}" SelectionChanged="servicesCb_SelectionChanged">
+            <ComboBox.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Text="цена" 
+               TextWrapping="Wrap"
+               FontSize="35" 
+               FontWeight="Bold"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" 
+               Grid.RowSpan="1" Grid.ColumnSpan="2" 
+               Grid.Row="3">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Border BorderThickness="4"
+                CornerRadius="26"
+                Grid.RowSpan="1" Grid.ColumnSpan="2" 
+                Grid.Row="3" Grid.Column="1"
+                Height="60" Width="250">
+            <Border.BorderBrush>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <TextBox Background="Transparent"
+                 FontSize="35" IsEnabled="False"
+                 Height="50" Text="{Binding Price}"
+                 BorderThickness="0"
+                 Padding="15 0 0 0"
+                 x:Name="priceTb">
+
+                <TextBlock.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#C0D5B3" Offset="0"/>
+                        <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                        <GradientStop Color="#A3AEE6" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBox>
+        </Border>
+        
+        <TextBlock Text="кол-во окон/площадь" 
+                   FontSize="35"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Grid.RowSpan="2" Grid.ColumnSpan="2" 
+                   Grid.Row="3">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Border BorderThickness="4"
+                CornerRadius="26" 
+                Grid.RowSpan="2" Grid.ColumnSpan="2" 
+                Grid.Row="3" Grid.Column="1"
+                Height="60" Width="250">
+            <Border.BorderBrush>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <TextBox Background="Transparent"
+                    FontSize="35"
+                    Height="50"
+                    BorderThickness="0"
+                    Padding="15 0 0 0"
+                    x:Name="squareTb"
+                    TextChanged="squareTb_TextChanged">
+
+                <TextBlock.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#C0D5B3" Offset="0"/>
+                        <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                        <GradientStop Color="#A3AEE6" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBox>
+        </Border>
+        
+        <TextBlock Text="дата" 
+      FontSize="35"
+       FontWeight="Bold"
+       HorizontalAlignment="Center" 
+       VerticalAlignment="Center" 
+       Grid.RowSpan="1" Grid.ColumnSpan="2" 
+       Grid.Row="4">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <DatePicker x:Name="dateDp"
+                    Width="250"
+                    Height="60" FontSize="35"
+                    Grid.RowSpan="1" 
+                    Grid.ColumnSpan="2" 
+                    Grid.Column="1"
+                    Grid.Row="4">
+            <DatePicker.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.Foreground>
+        </DatePicker>
+        
+        <Border CornerRadius="26" Height="60" Width="250"
+            Grid.Column="1"
+            Grid.Row="8">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Button Content="добавить"
+                FontSize="40"
+                FontWeight="Bold"
+                Foreground="White" Width="250"
+                Background="Transparent"
+                BorderThickness="0" 
+                x:Name="SaveBtn" Click="SaveBtn_Click" Height="60" 
+                    VerticalAlignment="Top"/>
+        </Border>
+
+    </Grid>
+</Page>

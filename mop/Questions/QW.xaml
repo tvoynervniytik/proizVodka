@@ -1,0 +1,118 @@
+﻿<Window x:Class="mop.Questions.QW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mop.Questions"
+        mc:Ignorable="d"
+        Title="QW" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Images/Vector.png"
+           Grid.Column="2" 
+           Grid.RowSpan="4" 
+           VerticalAlignment="Top"
+           HorizontalAlignment="Right"/>
+        <Image Source="/Images/Vector.png"
+           VerticalAlignment="Bottom"
+           HorizontalAlignment="Left"
+           RenderTransformOrigin="0.5,0.5" 
+           Grid.RowSpan="4" Grid.Row="0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180.071"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock Text="подтвердите, что вы являетесь администратором"
+               FontSize="35" TextWrapping="Wrap"
+               FontWeight="Bold" Width="500" TextAlignment="Center"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Column="0" Grid.RowSpan="1"
+               Grid.ColumnSpan="3">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock Text="введите дополнительный пароль"
+               FontSize="30" TextWrapping="Wrap"
+                   Margin="0 40 0 0"
+               FontWeight="Bold" Width="500" TextAlignment="Center"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Column="0" Grid.RowSpan="2"
+               Grid.ColumnSpan="3">
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Border BorderThickness="4"
+                Margin="0 60 0 0"
+     CornerRadius="26" Grid.RowSpan="3" Grid.ColumnSpan="3"
+     Height="60" Width="250">
+            <Border.BorderBrush>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <PasswordBox Background="Transparent"
+      FontSize="35"  
+      Height="50" 
+                 Width="300"
+      BorderThickness="0"
+      Padding="15 0 0 0"
+      x:Name="pasportTb">
+
+                <PasswordBox.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#C0D5B3" Offset="0"/>
+                        <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                        <GradientStop Color="#A3AEE6" Offset="1"/>
+                    </LinearGradientBrush>
+                </PasswordBox.Foreground>
+            </PasswordBox>
+        </Border>
+        <Border CornerRadius="26" Height="35" Width="150"
+            Grid.Column="1"
+            Grid.Row="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#C0D5B3" Offset="0"/>
+                    <GradientStop Color="#B3C9D5" Offset="0.5"/>
+                    <GradientStop Color="#A3AEE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Button Content="ввести"
+                FontSize="25"
+                FontWeight="Bold"
+                Foreground="White"
+                Background="Transparent"
+                BorderThickness="0" 
+                x:Name="addBtn" Click="addBtn_Click" />
+        </Border>
+    </Grid>
+</Window>
